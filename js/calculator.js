@@ -60,5 +60,8 @@ $(document).ready(function() {
     var num2 = Number(input.join(''));
     var result = calculate(num1, num2);
     $('.input').text(result);
+    input = [];
+    operation = '';
+    num1 = 0;
   });
 });
