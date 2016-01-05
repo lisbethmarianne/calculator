@@ -9,6 +9,14 @@ $(document).ready(function() {
   numbers.push('<div class="square minus-plus-sign">-/+</div>');
   $('.numbers').append(numbers.join(''));
 
+  // a little animation
+  $('.square').mouseenter(function(){
+    $(this).fadeTo('fast', 0.75);
+  });
+  $('.square').mouseleave(function(){
+    $(this).fadeTo('fast', 1);
+  });
+
   // store clicked numbers/dot and add to input field
   var input = [];
   $('.number, .dot').on('click', function(){    // edit this to add only one dot
