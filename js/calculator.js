@@ -1,14 +1,4 @@
 $(document).ready(function() {
-  // numbers (0 - 9, ., -/+)
-  var numbers = [];
-  for (i = 0; i <= 9; i++) {
-    var j = 9 - i;
-    numbers.push('<div class="square number ' + j + '">' + j + '</div>');
-  }
-  numbers.push('<div class="square dot">.</div>');
-  numbers.push('<div class="square minus-plus-sign">-/+</div>');
-  $('.numbers').append(numbers.join(''));
-
   // a little animation
   $('.square').mouseenter(function(){
     $(this).fadeTo('fast', 0.75);
@@ -46,14 +36,11 @@ $(document).ready(function() {
     $('.input').text(input.join(''));
   });
 
-  // operations
-  var num1 = 0;
-  var operation = '';
-  $('.plus, .minus, .divide, .multiply').on('click', function(){    // edit this to add only one dot
-    operation = $(this).text();
-    num1 = Number(input.join(''));
-    $('.input').text(operation);
-    input = [];
+  // Percent
+  $('.percent').on('click', function(){
+    var num = Number(input.join(''))/100;
+    $('.input').text(num);
+    input = [num];
   });
 
   // clear
@@ -62,6 +49,16 @@ $(document).ready(function() {
     input = [];
     operation = '';
     num1 = 0;
+  });
+
+  // operations
+  var num1 = 0;
+  var operation = '';
+  $('.plus, .minus, .divide, .multiply').on('click', function(){    // edit this to add only one dot
+    operation = $(this).text();
+    num1 = Number(input.join(''));
+    $('.input').text(operation);
+    input = [];
   });
 
   // calculate
@@ -73,10 +70,10 @@ $(document).ready(function() {
       case '-':
         return (num1 - num2);
         break;
-      case '*':
+      case '×':
         return (num1 * num2);
         break;
-      case '/':
+      case '÷':
         return (num1 / num2);
         break;
       default:
@@ -88,7 +85,7 @@ $(document).ready(function() {
     var num2 = Number(input.join(''));
     var result = calculate(num1, num2);
     $('.input').text(result);
-    input = [];
+    input = [result];
     operation = '';
     num1 = 0;
   });
