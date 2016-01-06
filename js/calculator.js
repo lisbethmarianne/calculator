@@ -26,6 +26,17 @@ $(document).ready(function() {
     $('.input').text(input.join(''));
   });
 
+  // +/-
+  $('.minus-plus-sign').on('click', function(){
+    if (input.includes("-")) {
+      input.shift();
+    } else {
+      input.unshift("-");
+    }
+    $('.input').empty();
+    $('.input').text(input.join(''));
+  });
+
   // operations
   var num1 = 0;
   var operation = '';
