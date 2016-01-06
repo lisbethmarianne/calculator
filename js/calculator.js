@@ -17,11 +17,20 @@ $(document).ready(function() {
     $(this).fadeTo('fast', 1);
   });
 
-  // store clicked numbers/dot and add to input field
+  // store clicked numbers and add to input field
   var input = [];
-  $('.number, .dot').on('click', function(){    // edit this to add only one dot
+  $('.number').on('click', function(){
     var number = $(this).text();
     input.push(number);
+    $('.input').empty();
+    $('.input').text(input.join(''));
+  });
+
+  // dot
+  $('.dot').on('click', function(){
+    if (!input.includes(".")) {
+      input.push(".");
+    }
     $('.input').empty();
     $('.input').text(input.join(''));
   });
