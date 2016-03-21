@@ -1,16 +1,21 @@
 .container {
-  width: 400px;
-  margin: 30px auto;
-  font-size: 30px;
+  width: 200px;
+  margin: 100px auto;
+  font-size: 18px;
   font-family: "Courier New", Courier, monospace;
-  line-height: 99px;
+  line-height: 49px;
   color: white;
   text-align: center;
 }
 
+.spacer {
+  clear: both;
+  height: 100px;
+}
+
 .input {
-  height: 99px;
-  width: 389px;
+  height: 49px;
+  width: 189px;
   background-color: #bbb;
   border-bottom: 1px solid white;
   text-align: right;
@@ -23,10 +28,10 @@
   float: left;
   border-bottom: 1px solid white;
   border-right: 1px solid white;
-  height: 99px;
-  width: 99px;
+  height: 49px;
+  width: 49px;
 }
 
 .double-size {
-  width: 199px;
+  width: 99px;
 }
